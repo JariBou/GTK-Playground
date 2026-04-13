@@ -1,40 +1,7 @@
-using System;
 using Unity.VisualScripting;
-using UnityEngine;
 
 namespace _project.VisualScriptingTests
 {
-    [Serializable, Inspectable]
-    public class TestClass
-    {
-        [SerializeField, Inspectable] private int _int;
-
-        [Inspectable]
-        public string TestString;
-
-        public TestClass(){}
-    
-        public TestClass(int numberOfTimesTriggered)
-        {
-            _int = numberOfTimesTriggered;
-        }
-
-        public int numberOfTimesTriggered => _int;
-    }
-
-    [Serializable, Inspectable]
-    public class PlayerCharacter
-    {
-        [Inspectable]
-        public string name; 
-        [Inspectable]
-        public string type;
-        [Inspectable]
-        public string color;
-        [Inspectable]
-        public int level;
-    }
-
     public class DeconstructTestClass : Unit
     {
         [DoNotSerialize] // No need to serialize ports

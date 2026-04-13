@@ -156,11 +156,15 @@ namespace _project.Editor.AssetImporter
                 switch (port.firstConnectedPort.GetNode())
                 {
                     case IVariableNode variableNode:
+                    {
                         variableNode.variable.TryGetDefaultValue<T>(out value);
                         return value;
+                    }
                     case IConstantNode constantNode:
+                    {
                         constantNode.TryGetValue<T>(out value);
                         return value;
+                    }
                     default:
                         // Comes here when comming from custom node lmao
                         Debug.Log("Eyaaa");
